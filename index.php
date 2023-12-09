@@ -3,6 +3,9 @@ define('APP_ROOT', __DIR__);
 
 require_once(APP_ROOT.'/vendor/autoload.php');
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 spl_autoload_register(function($class) {
     
     $className = str_replace('//', DIRECTORY_SEPARATOR, $class.'.php');
