@@ -22,27 +22,27 @@
                     </div>
                     <div class="card-body">
                         <?php
-                        if (errorFlush()) :
+                        if (error()) :
                         ?>
-                            <div class="alert alert-danger p-1"><?= errorFlushShow() ?></div>
+                            <div class="alert alert-danger p-1"><?= error() ?></div>
                         <?php endif ?>
                         <form method="post" action="login-submit">
                             <div class="form-group mb-2">
                                 <label>Email</label>
                                 <input class="form-control" name="email" type="email">
                                 <?php
-                                if (error('email')) :
+                                if (input_error('email')) :
                                 ?>
-                                    <span class="text-danger"><?= errorShow('email') ?></span>
+                                    <span class="text-danger"><?= input_error('email') ?></span>
                                 <?php endif ?>
                             </div>
                             <div class="form-group mb-2">
                                 <label>Password</label>
                                 <input class="form-control" name="password" type="password">
                                 <?php
-                                if (error('password')) :
+                                if (input_error('password')) :
                                 ?>
-                                    <span class="text-danger"><?= errorShow('password') ?></span>
+                                    <span class="text-danger"><?= input_error('password') ?></span>
                                 <?php endif ?>
                             </div>
                             <div class="form-group mb-2">

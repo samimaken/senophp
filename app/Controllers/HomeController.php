@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 class HomeController{
     public function index() {
-        return view('pages.home');
+        return view('home');
     }
 
     public function logout() {

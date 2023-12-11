@@ -6,7 +6,7 @@ use App\Rules\Validate;
 class RegisterController{
     
     public function index() {
-        return view('pages.register');
+        return view('auth.register');
     }
 
     public function register() {

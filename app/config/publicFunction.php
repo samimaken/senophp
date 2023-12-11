@@ -6,50 +6,25 @@ function redirect($path) {
 
 function view($page) {
     $page = str_replace('.', DIRECTORY_SEPARATOR, $page);
-    require(APP_ROOT.'/'.$page.'.php');
+    require(APP_ROOT.'/pages/'.$page.'.php');
 }
-function error($name) {
+function input_error($name) {
     if(isset($_SESSION['errors']) && isset($_SESSION['errors'][$name])) {
        return $_SESSION['errors'][$name];
     }
     return false;
 }
 
-function errorShow($name) {
-    if(isset($_SESSION['errors']) && isset($_SESSION['errors'][$name])) {
-        $error =  $_SESSION['errors'][$name];
-        unset($_SESSION['errors'][$name]);
-        return $error;
-     }
-     return false;
-}
-
-function successFlush() {
+function success() {
     if(isset($_SESSION['success'])) {
         $succes = $_SESSION['success'];
         return $succes;
     }
 }
 
-function errorFlush() {
+function error() {
     if(isset($_SESSION['error'])) {
         $error = $_SESSION['error'];
-        return $error;
-    }
-}
-
-function successFlushShow() {
-    if(isset($_SESSION['success'])) {
-        $succes = $_SESSION['success'];
-        unset($_SESSION['success']);
-        return $succes;
-    }
-}
-
-function errorFlushShow() {
-    if(isset($_SESSION['error'])) {
-        $error = $_SESSION['error'];
-        unset($_SESSION['error']);
         return $error;
     }
 }

@@ -6,7 +6,7 @@ use App\Rules\Validate;
 class LoginController{
     
     public function index() {
-        return view('pages.login');
+        return view('auth.login');
     }
 
     public function login() {

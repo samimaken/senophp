@@ -24,3 +24,5 @@ require_once(APP_ROOT.'/routes/web.php');
 $route = new Route();
 
 $route->handle();
+
+App\Services\HandleSession::handle();
